@@ -1,4 +1,4 @@
-   <style>
+  <style>
         .clou-container {
         position: relative;
         display: flex;
@@ -48,30 +48,39 @@ width: 360px;
 
 .chat-header {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
+  font-family:"Acherusgrotesque", sans-serif;
   color: #00202e;
   margin-bottom: 20px;
   padding-left: 10px;
 }
 
 #clou-option-container > .option-container {
-  display: inline-block;
   width: 100%;
-  height:30px;
+  display:flex;
+  flex-direction: column;
 }
 
 #clou-option-container > .option-container > .chat-option {
-  width: 49%;
-  border-radius: 10px;
-  height: 30px;
-  color: #00202e;
-  border: none;
-  outline: none;
-  background: #fff;
-  font-size: 14px;
-  text-align: left;
-  padding-left: 20px;
-  cursor: pointer;
+    width: 100%;
+    display: inline-block;
+    border-radius: 10px;
+    height: 30px;
+    color: #00202e;
+    
+    background: #fff;
+    font-size: 18px;
+    font-family: "Acherusgrotesque", sans-serif;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+.chat-option:first-child{
+    margin-bottom:5px;
 }
 
 #clou-option-container > .chat-option:first-of-type {
@@ -270,8 +279,8 @@ p.from-them::after {
             <div id="clou-option-container">
                 <span class="chat-header">Placeholder Question</span>
                 <div class="option-container">
-                    <span id="1" class="chat-option">Option 1</button>
-                    <span id="2" class="chat-option">Option 2</button>
+                    <span id="1" class="chat-option">Option 1</span>
+                    <span id="2" class="chat-option">Option 2</span>
                 </div>
                 <div id="chat-thread" class="imessage hidden">
                 </div>
@@ -334,11 +343,8 @@ $(document).ready(function () {
     };
 
     setInterval(() => {
-        console.log($("input[data-w-id='0779cddc-b9a3-359d-72ae-ef1149d76322']").css('will-change'))
         if ($("input[data-w-id='0779cddc-b9a3-359d-72ae-ef1149d76322']").css('will-change') != ''){
-            console.log('test')
             clouSelectionContainer.addClass('show');
-
         }
     }, 1000);
 
