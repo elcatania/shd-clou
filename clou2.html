@@ -344,11 +344,11 @@
             options.forEach((item) => {
                 item.addEventListener('click', () => {
 
-                    selectOption(item)
+                    selectOption2(item)
                 })
             })
 
-            function selectOption(item, option) {
+            function selectOption2(item, option) {
                 var optionResult = optionResults[item.id]
                 var message = $('<p></p>').addClass('from-me').text(optionResult.title);
                 clouChatThread2.removeClass('hidden');
