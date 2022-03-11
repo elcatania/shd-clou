@@ -1,3 +1,4 @@
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <style>
         .clou-container2 {
             position: relative;
@@ -277,8 +278,8 @@
             <div id="clou-option-container2" class="clou-option-container">
                 <span class="chat-header">Placeholder Question</span>
                 <div class="option-container">
-                    <span id="1" class="chat-option">Option 1</span>
-                    <span id="2" class="chat-option">Option 2</span>
+                    <span onclick="selectOption2(1)" id="1" class="chat-option">Option 1</span>
+                    <span onclick="selectOption2(2)"  id="2" class="chat-option">Option 2</span>
                 </div>
                 <div id="chat-thread2" class="imessage hidden">
                 </div>
@@ -308,7 +309,6 @@
         }
 
         $(document).ready(function () {
-            var options = $('.chat-option').toArray()
             var clouSelectionContainer2 = $('#clou-selection-container2');
             var clouChatThread2 = $('#chat-thread2');
             var closeBtn2 = $('#close-btn2');
@@ -341,14 +341,7 @@
                 clouSelectionContainer2.removeClass('show');
             })
 
-            options.forEach((item) => {
-                item.addEventListener('click', () => {
-
-                    selectOption2(item)
-                })
-            })
-
-            function selectOption2(item, option) {
+            function selectOption2(id) {
                 var optionResult = optionResults[item.id]
                 var message = $('<p></p>').addClass('from-me').text(optionResult.title);
                 clouChatThread2.removeClass('hidden');
@@ -374,3 +367,4 @@
             }
         })
     </script>
+
