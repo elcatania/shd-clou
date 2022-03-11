@@ -54,14 +54,10 @@ width: 360px;
   padding-left: 10px;
 }
 
-#result-text {
-  font: 18px;
-  padding-left: 10px;
-}
-
 #clou-option-container > .option-container {
   display: inline-block;
   width: 100%;
+  height:30px;
 }
 
 #clou-option-container > .option-container > .chat-option {
@@ -337,15 +333,14 @@ $(document).ready(function () {
         return elementBottom > viewportTop && elementTop < viewportBottom;
     };
 
-    $(window).on('resize scroll', function() {
-        if ($('#step2').isInViewport()) {
-            console.log("VISIBLE")
-            // do something
-        } else {
-            console.log("VISIBLE")
-            // do something else
+    setInterval(() => {
+        console.log($('input[data-w-id='0779cddc-b9a3-359d-72ae-ef1149d76322']').css('will-change'))
+        if ($('input[data-w-id='0779cddc-b9a3-359d-72ae-ef1149d76322']').css('will-change') != ''){
+            console.log('test')
+            clouSelectionContainer.addClass('show');
+
         }
-    });
+    }, 1000);
 
     closeBtn.click(() => {
         clouChatThread.empty();
