@@ -277,8 +277,8 @@
         <div id="clou-option-container" class="clou-option-container">
             <span class="chat-header">Placeholder Question</span>
             <div class="option-container">
-                <span onclick="selectOption(1)" id="1" class="chat-option">Option 1</span>
-                <span onclick="selectOption(2)" id="2" class="chat-option">Option 2</span>
+                <span id="option1" class="chat-option">Option 1</span>
+                <span id="option2" class="chat-option">Option 2</span>
             </div>
             <div id="chat-thread" class="imessage hidden">
             </div>
@@ -339,6 +339,14 @@
                 clouChatThread.empty();
                 clouSelectionContainer.removeClass('show');
             })
+
+            $('#option1').click(() => {
+                selectOption(1)
+            });
+            $('#option2').click(() => {
+                selectOption(2)
+            });
+
 
             function selectOption(id) {
                 var optionResult = optionResults[id]
