@@ -1,5 +1,5 @@
-   <style>
-        .clou-container {
+  <style>
+        .clou-container2 {
             position: relative;
             display: flex;
             justify-content: flex-end;
@@ -262,7 +262,7 @@
             width: 10px;
         }
     </style>
-    <div id="clou-container2" class="clou-container">
+    <div id="clou-container2" class="clou-container2">
         <div id="clou-selection-container2" class="clou-selection-container">
             <span id="close-btn2" class="close-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -313,32 +313,32 @@
             var clouChatThread2 = $('#chat-thread2');
             var closeBtn2 = $('#close-btn2');
             
-            const clou = document.getElementById('eY2rG9csS3i1');
-            clou.svgatorPlayer.ready(function () {
-                var clouContainer = $('#clou-container2');
-                clouContainer.mouseenter(() => {
+            const clou2 = document.getElementById('eY2rG9csS3i1');
+            clou2.svgatorPlayer.ready(function () {
+                var clouContainer2 = $('#clou-container2');
+                clouContainer2.mouseenter(() => {
                     if (!this.isRollingBack)
                         this.play();
 
                 })
-                clouContainer.mouseleave(() => {
+                clouContainer2.mouseleave(() => {
                     this.reverse();
                 })
             });
 
-            clou.addEventListener('click', () => {
+            clou2.addEventListener('click', () => {
                 clouSelectionContainer.addClass('show');
             })
 
             setInterval(() => {
                 if ($("div[data-w-id='eece551f-f836-b750-646d-e482cd99f812']").css('will-change') == undefined){
-                    clouSelectionContainer.addClass('show');
+                    clouSelectionContainer2.addClass('show');
                 }
             }, 1000);
 
-            closeBtn.click(() => {
-                clouChatThread.empty();
-                clouSelectionContainer.removeClass('show');
+            closeBtn2.click(() => {
+                clouChatThread2.empty();
+                clouSelectionContainer2.removeClass('show');
             })
 
             options.forEach((item) => {
@@ -351,22 +351,22 @@
             function selectOption(item, option) {
                 var optionResult = optionResults[item.id]
                 var message = $('<p></p>').addClass('from-me').text(optionResult.title);
-                clouChatThread.removeClass('hidden');
+                clouChatThread2.removeClass('hidden');
 
-                clouChatThread.append(message)
-                clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
+                clouChatThread2.append(message)
+                clouSelectionContainer2.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
                 var typing = $('<span></span>').addClass('loadingDots')
                     .append($('<span class="dot1"></span>'))
                     .append($('<span class="dot2"></span>'))
                     .append($('<span class="dot3"></span>'))
                 setTimeout(() => {
-                    clouChatThread.append(typing)  
+                    clouChatThread2.append(typing)  
                     setTimeout(() => {
                         typing.remove();
                         setTimeout(() => {
                             var answer = $('<p></p>').addClass('from-them').text(optionResult.text);
-                            clouChatThread.append(answer)  
-                            clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
+                            clouChatThread2.append(answer)  
+                            clouSelectionContainer2.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
 
                         },0)   
                     },2000)
