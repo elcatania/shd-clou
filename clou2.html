@@ -333,15 +333,15 @@
             })
 
             $('#option3').click(() => {
-                selectOption2("3")
+                selectOption2(3)
             });
             $('#option4').click(() => {
-                selectOption2("4")
+                selectOption2(4)
             });
 
             function selectOption2(id) {
-                var optionResult = optionResults[id]
-                var message = $('<p></p>').addClass('from-me').text(optionResult.title);
+                var optionResult2 = optionResults2[id]
+                var message = $('<p></p>').addClass('from-me').text(optionResult2.title);
                 clouChatThread2.removeClass('hidden');
 
                 clouChatThread2.append(message)
@@ -355,7 +355,7 @@
                     setTimeout(() => {
                         typing.remove();
                         setTimeout(() => {
-                            var answer = $('<p></p>').addClass('from-them').text(optionResult.text);
+                            var answer = $('<p></p>').addClass('from-them').text(optionResult2.text);
                             clouChatThread2.append(answer)  
                             clouSelectionContainer2.animate({ scrollTop: clouSelectionContainer2.prop("scrollHeight")}, 1000);
 
