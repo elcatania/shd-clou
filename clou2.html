@@ -277,8 +277,8 @@
             <div id="clou-option-container2" class="clou-option-container">
                 <span class="chat-header">Placeholder Question</span>
                 <div class="option-container">
-                    <span onclick="selectOption2(1)" id="1" class="chat-option">Option 1</span>
-                    <span onclick="selectOption2(2)"  id="2" class="chat-option">Option 2</span>
+                    <span id="option3" class="chat-option">Option 1</span>
+                    <span id="option4" class="chat-option">Option 2</span>
                 </div>
                 <div id="chat-thread2" class="imessage hidden">
                 </div>
@@ -340,8 +340,15 @@
                 clouSelectionContainer2.removeClass('show');
             })
 
+            $('#option3').click(() => {
+                selectOption(3)
+            });
+            $('#option4').click(() => {
+                selectOption(4)
+            });
+
             function selectOption2(id) {
-                var optionResult = optionResults[item.id]
+                var optionResult = optionResults[id]
                 var message = $('<p></p>').addClass('from-me').text(optionResult.title);
                 clouChatThread2.removeClass('hidden');
 
@@ -366,4 +373,3 @@
             }
         })
     </script>
-
