@@ -1,4 +1,4 @@
- <style>
+<style>
     .clou-container {
         position: relative;
         display: flex;
@@ -277,8 +277,8 @@
         <div id="clou-option-container" class="clou-option-container">
             <span class="chat-header">Placeholder Question</span>
             <div class="option-container">
-                <span id="1" class="chat-option">Option 1</span>
-                <span id="2" class="chat-option">Option 2</span>
+                <span onclick="selectOption(1)" id="1" class="chat-option">Option 1</span>
+                <span onclick="selectOption(2)" id="2" class="chat-option">Option 2</span>
             </div>
             <div id="chat-thread" class="imessage hidden">
             </div>
@@ -308,7 +308,6 @@
         }
 
         $(document).ready(function () {
-            var options = $('.chat-option').toArray()
             var clouSelectionContainer = $('#clou-selection-container');
             var clouChatThread = $('#chat-thread');
             var closeBtn = $('#close-btn');
@@ -341,15 +340,8 @@
                 clouSelectionContainer.removeClass('show');
             })
 
-            options.forEach((item) => {
-                item.addEventListener('click', () => {
-
-                    selectOption(item)
-                })
-            })
-
-            function selectOption(item, option) {
-                var optionResult = optionResults[item.id]
+            function selectOption(id) {
+                var optionResult = optionResults[id]
                 var message = $('<p></p>').addClass('from-me').text(optionResult.title);
                 clouChatThread.removeClass('hidden');
 
