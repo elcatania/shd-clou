@@ -370,6 +370,7 @@
                             
                             if(position.top >= 0 && position.bottom <= window.innerHeight) {
                                 if(currentClouPosIndex !== index){
+                                    currentClouPosIndex = index;
                                     var leftPos  = position.left + $(window)['scrollLeft']();
                                     var topPos   = position.top + $(window)['scrollTop']();
                                     clouSelectionContainer.removeClass('show');
@@ -380,9 +381,7 @@
                                             $(options[optionIndex]).css('display','none')
                                     })
                                     clouContainer.animate({ top:  topPos + 'px',left: leftPos + 'px'}, 1000,() => {
-                                        clouSelectionContainer.addClass('show');
-                                        currentClouPosIndex = index;
-                                      
+                                        clouSelectionContainer.addClass('show');                                      
                                     });
                                 }
                             }
