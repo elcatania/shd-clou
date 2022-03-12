@@ -353,7 +353,7 @@
                     clouSelectionContainer6.removeClass('show');
                 })
 
-                var steps = $('.step_number');
+                var steps = $('.step_numberwrap');
                 var currentClouPosIndex;
 
                 options.each((index,element) => {
@@ -368,7 +368,7 @@
                             var currentElement = steps[index];
                             var position = currentElement.getBoundingClientRect();
                             
-                            if(position.top >= 0 && position.top <= window.innerHeight) {
+                            if(position.top >= 0 && position.bottom <= window.innerHeight) {
                                 if(currentClouPosIndex !== index){
                                     var leftPos  = position.left + $(window)['scrollLeft']();
                                     var topPos   = position.top + $(window)['scrollTop']();
