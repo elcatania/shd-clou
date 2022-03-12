@@ -371,8 +371,10 @@
                             if(position.top >= 0 && position.bottom <= window.innerHeight) {
                                 if(currentClouPosIndex !== index){
                                     currentClouPosIndex = index;
-                                    var leftPos  = position.left + 30 + $(window)['scrollLeft']();
-                                    var topPos   = position.top - 90 + $(window)['scrollTop']();
+                                    var leftPos = position.left + 30 + $(window)['scrollLeft']();
+                                    if(currentElement.parentElement.className.indexOf('text-left') > -1){
+                                        leftPos = leftPos + 100;
+                                    }
                                     clouSelectionContainer.removeClass('show');
                                     options.each( (optionIndex) => {
                                         if(optionIndex == index || optionIndex == index + 1)
