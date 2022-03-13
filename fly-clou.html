@@ -374,6 +374,7 @@
                                     var leftPos = position.left + 30 + $(window)['scrollLeft']();
                                     var topPos   = position.top - 90 + $(window)['scrollTop']();
                                     if(currentElement.parentElement.className.indexOf('step_numberwrap-left') > -1){
+                                        console.log(currentElement.parentElement)
                                         leftPos = leftPos + 100;
                                     }
                                     clouSelectionContainer.removeClass('show');
