@@ -379,7 +379,7 @@
                                     }
                                     clouSelectionContainer.removeClass('show');
                                     options.each( (optionIndex) => {
-                                        if(optionIndex == index + 1 || optionIndex == index + 2)
+                                        if(optionIndex >= index  && optionIndex < index + 1 * 2)
                                             $(options[optionIndex]).show();
                                         else
                                             $(options[optionIndex]).css('display','none')
