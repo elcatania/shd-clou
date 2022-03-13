@@ -375,11 +375,11 @@
                                     var topPos   = position.top - 90 + $(window)['scrollTop']();
                                     if(currentElement.className.indexOf('step_text-left') > -1 || currentElement.children[0].className.indexOf('step_numberwrap-left') > -1){
                                         console.log(currentElement.parentElement)
-                                        leftPos = leftPos + 200;
+                                        leftPos = leftPos + 250;
                                     }
                                     clouSelectionContainer.removeClass('show');
                                     options.each( (optionIndex) => {
-                                        if(optionIndex >= index  && optionIndex < index + 1 * 2)
+                                        if(optionIndex >= index  && optionIndex <= index * 2 + 1)
                                             $(options[optionIndex]).show();
                                         else
                                             $(options[optionIndex]).css('display','none')
