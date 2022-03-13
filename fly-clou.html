@@ -378,15 +378,16 @@
                                     var leftPos = position.left + 30 + $(window)['scrollLeft']();
                                     var topPos   = position.top - 90 + $(window)['scrollTop']();
                                     var child = currentElement.children[0];
+                                    console.log(child)
                                     if(child == undefined){
+                                        console.log(currentElement.className,child.className)
                                         if(currentElement.className.indexOf('step_text-left') > -1 ){
-                                            console.log(currentElement.className,child.className)
                                             leftPos = leftPos + 200;
                                         } 
                                     }
                                     else {
+                                        console.log(currentElement.className,child.className)
                                         if(currentElement.className.indexOf('step_text-left') > -1  || child.className.indexOf('step_numberwrap-left') > -1){
-                                            console.log(currentElement.className,child.className)
                                             leftPos = leftPos + 200;
                                         } 
                                     }
