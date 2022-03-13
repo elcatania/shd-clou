@@ -328,6 +328,14 @@
                 var clouChatThread = $('#chat-thread');
                 var closeBtn = $('#close-btn');
                 var clouContainer = $('#clou-container');
+                var steps = $('.step_number');
+                var currentClouPosIndex;
+
+                clouContainer.css('display','none')
+                clouContainer.animate({ top:  (steps[0].getBoundingClientRect().top + -90 + $(window)['scrollTop']()) + 'px', left: (steps[0].getBoundingClientRect().left + 30 + $(window)['scrollLeft']()) + 'px'}, 1000,() => {
+                    clouContainer.show();
+                    clouSelectionContainer.addClass('show');
+                });
                 
                 options.each( (element) => {
                     $(element).css('display','none')
@@ -353,11 +361,7 @@
                     clouSelectionContainer6.removeClass('show');
                 })
 
-                var steps = $('.step_text');
-                var currentClouPosIndex;
-
                 options.each((index,element) => {
-                    
                     $(element).click(() => {
                         selectOption(element.id)
                     })
