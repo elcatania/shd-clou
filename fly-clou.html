@@ -379,7 +379,12 @@
                         
                     } else {
                         // upscroll code
-                        currentElement = steps[currentClouPosIndex - 1];
+                        if(currentClouPosIndex === 0){
+                            currentElement = steps[currentClouPosIndex];
+                        }
+                        else{
+                            currentElement = steps[currentClouPosIndex - 1];
+                        }
                         var position = currentElement.getBoundingClientRect();
                     }
                     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
