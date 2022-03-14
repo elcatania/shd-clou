@@ -408,12 +408,12 @@
                         // }
                         
                         clouSelectionContainer.removeClass('show');
-                        options.each( (optionIndex) => {
-                            if(optionIndex < index + 1 * 2 && optionIndex > index)
-                                $(options[optionIndex]).show();
-                            else
-                                $(options[optionIndex]).css('display','none')
-                        })
+//                         options.each( (optionIndex) => {
+//                             if(optionIndex < index + 1 * 2 && optionIndex > index)
+//                                 $(options[optionIndex]).show();
+//                             else
+//                                 $(options[optionIndex]).css('display','none')
+//                         })
                         clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
                             clouSelectionContainer.addClass('show');
                         });
