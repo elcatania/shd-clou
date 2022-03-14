@@ -368,49 +368,56 @@
                 })
                     
                 window.addEventListener('scroll', function() {
-                    steps.each((index) => {
-                            var currentElement = steps[index];
-                            var position = currentElement.getBoundingClientRect();
-                            
-                            if(position.top >= 0 && position.bottom <= window.innerHeight) {
-                                if(currentClouPosIndex !== index){
-                                    currentClouPosIndex = index;
-                                    var leftPos = position.left + 30 + $(window)['scrollLeft']();
-                                    var topPos   = position.top - 90 + $(window)['scrollTop']();
-                                    var child = currentElement.children[0];
-                                    console.log(child)
-                                    if(child == undefined){
-                                        console.log(currentElement.className)
-                                        if(currentElement.className.indexOf('step_text-left') > -1 ){
-                                            leftPos = leftPos + 200;
-                                        } 
-                                    }
-                                    else {
-                                        console.log(currentElement.className,child.className)
-                                        if(currentElement.className.indexOf('step_text-left') > -1  || child.className.indexOf('step_numberwrap-left') > -1){
-                                            leftPos = leftPos + 200;
-                                        } 
-                                    }
-                                   
-                                    clouSelectionContainer.removeClass('show');
-                                    options.each( (optionIndex) => {
-                                        if(optionIndex < index + 1 * 2 && optionIndex > index)
-                                            $(options[optionIndex]).show();
-                                        else
-                                            $(options[optionIndex]).css('display','none')
-                                    })
-                                    clouContainer.animate({ top:  topPos + 'px',left: leftPos + 'px'}, 1000,() => {
-                                        clouSelectionContainer.addClass('show');                                      
-                                    });
-                                }
-                            }
-                    })
-                    
+                 
+
+                   
+                    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+                    var currentElement;
+                    if (st > lastScrollTop){
+                        // downscroll code
+                        var currentElement = steps[currentClouPosIndex + 1];
+                        var position = currentElement.getBoundingClientRect();
+                        
+                    } else {
+                        // upscroll code
+                        var currentElement = steps[currentClouPosIndex - 1];
+                        var position = currentElement.getBoundingClientRect();
+                    }
+                    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+                    if(position.top >= 0 && position.bottom <= window.innerHeight) {
+                        currentClouPosIndex = currentClouPosIndex + 1;
+                        var leftPos = position.left + 30 + $(window)['scrollLeft']();
+                        var topPos  = position.top - 90 + $(window)['scrollTop']();
+                        var child = currentElement.children[0];
+                        // if(child == undefined){
+                        //     console.log(currentElement.className)
+                        //     if(currentElement.className.indexOf('step_text-left') > -1 ){
+                        //         leftPos = leftPos + 200;
+                        //     } 
+                        // }
+                        // else {
+                        //     console.log(currentElement.className,child.className)
+                        //     if(currentElement.className.indexOf('step_text-left') > -1  || child.className.indexOf('step_numberwrap-left') > -1){
+                        //         leftPos = leftPos + 200;
+                        //     } 
+                        // }
+                        
+                        clouSelectionContainer.removeClass('show');
+                        options.each( (optionIndex) => {
+                            if(optionIndex < index + 1 * 2 && optionIndex > index)
+                                $(options[optionIndex]).show();
+                            else
+                                $(options[optionIndex]).css('display','none')
+                        })
+                        clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
+                            clouSelectionContainer.addClass('show');
+                        });
+                    }
                     // checking for partial visibility
                     // if(position.top < window.innerHeight && position.bottom >= 0) {
                     //     console.log('Element is partially visible in screen');
                     // }
-                });
+                },false);
             
                 function selectOption(id) {
                     var optionResult = optionResults[id]
