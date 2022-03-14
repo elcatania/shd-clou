@@ -389,7 +389,8 @@
                         if (st > lastScrollTop){
                             // downscroll code
                             if(currentClouPosIndex < 5) {
-                                currentElement = steps[currentClouPosIndex + 1];
+                                currentClouPosIndex = currentClouPosIndex + 1;
+                                currentElement = steps[currentClouPosIndex];
                                 position = currentElement.getBoundingClientRect();
                             }
                             scrollDirection = 1;
@@ -399,6 +400,7 @@
                                 currentElement = steps[currentClouPosIndex];
                             }
                             else if(currentClouPosIndex > 0){
+                                currentClouPosIndex = currentClouPosIndex - 1;
                                 currentElement = steps[currentClouPosIndex - 1];
                             }
 
@@ -410,7 +412,7 @@
                             if(position.top >= 0 && position.top <= window.innerHeight) {
                                 var child,leftPos,topPos;
                                 
-                                if(currentClouPosIndex == 4){
+                                if(currentClouPosIndex == 5){
                                     child = $(currentElement).find('.col-m-none')[0];
                                     leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
                                     topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
@@ -424,7 +426,7 @@
                                     leftPos = leftPos + 250;
                                 }
                                 
-                                if(currentClouPosIndex == 4){
+                                if(currentClouPosIndex == 5){
                                     clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
                                 }
                                 else{
@@ -432,12 +434,7 @@
                                 }
                                 clouSelectionContainer.removeClass('show');
                                 
-                                if(scrollDirection == 1) {
-                                    currentClouPosIndex = currentClouPosIndex + 1;
-                                }
-                                else {
-                                    currentClouPosIndex = currentClouPosIndex - 1;
-                                }
+                               
                                 clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
                                     console.log(currentClouPosIndex);
                                     options.each( (optionIndex) => {
