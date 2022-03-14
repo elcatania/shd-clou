@@ -372,12 +372,14 @@
                         var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
                         var currentElement;
                         var position;
+                        var scrollDirection;
                         if (st > lastScrollTop){
                             // downscroll code
                             if(currentClouPosIndex < 5) {
                                 currentElement = steps[currentClouPosIndex + 1];
                                 position = currentElement.getBoundingClientRect();
                             }
+                            scrollDirection = 1;
                         } else {
                             // upscroll code
                             if(currentClouPosIndex === 0){
@@ -386,10 +388,11 @@
                             else if(currentClouPosIndex > 0){
                                 currentElement = steps[currentClouPosIndex - 1];
                             }
+
                             position = currentElement.getBoundingClientRect();
+                            scrollDirection = 0;
                         }
                         lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-                        console.log(currentElement)
                         if(currentElement !== undefined){
                             if(position.top >= 0 && position.top <= window.innerHeight) {
                                 var child = $(currentElement).find('.step_text')[0];
@@ -403,10 +406,13 @@
                                 //     else
                                 //         $(options[optionIndex]).css('display','none')
                                 // })
-                              
-                                currentClouPosIndex = currentClouPosIndex + 1;
+                                if(scrollDirection == 1)
+                                    currentClouPosIndex = currentClouPosIndex + 1;
+                                else
+                                    currentClouPosIndex = currentClouPosIndex - 1;
                                 clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
                                     clouSelectionContainer.addClass('show');
+                                    
                                 });
                             }
                         }
