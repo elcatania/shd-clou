@@ -398,7 +398,7 @@
                                 var child = $(currentElement).find('.step_text')[0];
                                 var leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
                                 var topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
-                                if($(child).hasClass('.step_text-left')){
+                                if($(currentElement).find('.step_text-left').length > 0){
                                     leftPos = leftPos + 200;
                                 }
                                 clouSelectionContainer.removeClass('show');
