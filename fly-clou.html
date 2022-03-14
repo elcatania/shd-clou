@@ -436,8 +436,7 @@
                                     currentClouPosIndex = currentClouPosIndex + 1;
                                 }
                                 else {
-                                    if(currentClouPosIndex > 0)
-                                      currentClouPosIndex = currentClouPosIndex - 1;
+                                    currentClouPosIndex = currentClouPosIndex - 1;
                                 }
                                 clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
                                     console.log(currentClouPosIndex);
