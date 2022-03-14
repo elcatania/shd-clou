@@ -337,8 +337,13 @@
                     clouSelectionContainer.addClass('show');
                 });
                 
-                options.each( (element) => {
+                options.each( (element,oIndex) => {
                     $(element).css('display','none')
+                    if(oIndex < 1)
+                        $(element).show();
+                    $(element).click(() => {
+                        selectOption(element.id)
+                    })
                 })
                 var clou = document.getElementById('eUOeSKg7HB11');
                 clou.svgatorPlayer.ready(function () {
@@ -361,11 +366,7 @@
                     clouSelectionContainer6.removeClass('show');
                 })
 
-                options.each((index,element) => {
-                    $(element).click(() => {
-                        selectOption(element.id)
-                    })
-                })
+                
                 var lastScrollTop = 0;
                 window.addEventListener('scroll', function() {
                     
@@ -409,7 +410,6 @@
                                     currentClouPosIndex = currentClouPosIndex - 1;
                                 clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
                                     options.each( (optionIndex) => {
-                                        console.log(currentClouPosIndex)
                                         if(optionIndex == currentClouPosIndex * 2 + 1 || optionIndex == currentClouPosIndex * 2)
                                             $(options[optionIndex]).show();
                                         else
