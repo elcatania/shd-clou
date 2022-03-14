@@ -337,7 +337,7 @@
                     clouSelectionContainer.addClass('show');
                 });
                 
-                options.each( (element,oIndex) => {
+                options.each( (oIndex,element) => {
                     $(element).css('display','none')
                     if(oIndex < 1)
                         $(element).show();
