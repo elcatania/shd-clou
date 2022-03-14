@@ -328,7 +328,7 @@
                 var clouChatThread = $('#chat-thread');
                 var closeBtn = $('#close-btn');
                 var clouContainer = $('#clou-container');
-                var steps = $('#step1, #step2, #step3, #step4, #step5');
+                var steps = $('#step1, #step2, #step3, #step4, #step5, #step6');
                 var currentClouPosIndex = 0;
 
                 clouContainer.css('display','none')
@@ -371,7 +371,6 @@
              
                     var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
                     var currentElement;
-                    console.log(steps)
                    if (st > lastScrollTop){
                         // downscroll code
                         currentElement = steps[currentClouPosIndex + 1];
@@ -387,8 +386,6 @@
                         var position = currentElement.getBoundingClientRect();
                     }
                     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-                    console.log(currentElement,position.top,position.bottom)
-                    console.log(position.top >= 0 && position.top <= window.innerHeight)
                     if(position.top >= 0 && position.top <= window.innerHeight) {
                         currentClouPosIndex = currentClouPosIndex + 1;
                         var leftPos = position.left + 30 + $(window)['scrollLeft']();
