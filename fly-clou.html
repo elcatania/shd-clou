@@ -376,6 +376,7 @@
                         // downscroll code
                         currentElement = steps[currentClouPosIndex + 1];
                         var position = currentElement.getBoundingClientRect();
+                        console.log(position)
                         
                     } else {
                         // upscroll code
@@ -386,8 +387,10 @@
                             currentElement = steps[currentClouPosIndex - 1];
                         }
                         var position = currentElement.getBoundingClientRect();
+                        console.log(position)
                     }
                     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+                    console.log(position.top >= 0 && position.bottom <= window.innerHeight)
                     if(position.top >= 0 && position.bottom <= window.innerHeight) {
                         currentClouPosIndex = currentClouPosIndex + 1;
                         var leftPos = position.left + 30 + $(window)['scrollLeft']();
