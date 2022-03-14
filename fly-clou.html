@@ -389,7 +389,7 @@
                         if (st > lastScrollTop){
                             // downscroll code
                             if(currentClouPosIndex < 5) {
-                                currentElement = steps[currentClouPosIndex];
+                                currentElement = steps[currentClouPosIndex + 1];
                                 position = currentElement.getBoundingClientRect();
                             }
                             scrollDirection = 1;
