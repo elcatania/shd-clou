@@ -374,12 +374,12 @@
                     console.log(steps)
                     if (st > lastScrollTop){
                         // downscroll code
-                        var currentElement = steps[currentClouPosIndex + 1];
+                        currentElement = steps[currentClouPosIndex + 1];
                         var position = currentElement.getBoundingClientRect();
                         
                     } else {
                         // upscroll code
-                        var currentElement = steps[currentClouPosIndex - 1];
+                        currentElement = steps[currentClouPosIndex - 1];
                         var position = currentElement.getBoundingClientRect();
                     }
                     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
