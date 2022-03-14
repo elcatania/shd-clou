@@ -405,6 +405,7 @@
                                 if($(currentElement).find('.step_text-left').length > 0 || $(currentElement).find('.step_numberwrap-left').length > 0){
                                     leftPos = leftPos + 250;
                                 }
+                                clouSelectionContainer.animate({ scrollTop: 0}, 1000);
                                 clouSelectionContainer.removeClass('show');
                                 
                                 if(scrollDirection == 1)
