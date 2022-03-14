@@ -380,8 +380,14 @@
 
                 
                 var lastScrollTop = 0;
+                var timer = null;
                 window.addEventListener('scroll', function() {
-                    
+                       if(timer !== null) {
+                            clearTimeout(timer);        
+                        }
+                        timer = setTimeout(function() {
+                              // do something
+                        
                         var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
                         var currentElement;
                         var position;
@@ -450,7 +456,7 @@
                                 });
                             }
                         }
-                    
+                    }, 150)
                 },false);            
                 function selectOption(id) {
                     var optionResult = optionResults[id]
