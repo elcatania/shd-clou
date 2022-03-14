@@ -423,12 +423,7 @@
                                 if($(currentElement).find('.step_text-left').length > 0 || $(currentElement).find('.step_numberwrap-left').length > 0){
                                     leftPos = leftPos + 250;
                                 }
-                                if(currentClouPosIndex == 4){
-                                   clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
-                                }
-                                else{
-                                   clouSelectionContainer.animate({ scrollTop: 0}, 1000);
-                                }
+                                
                                
                                 clouSelectionContainer.removeClass('show');
                                 
@@ -443,6 +438,12 @@
                                         else
                                             $(options[optionIndex]).css('display','none')
                                     })
+                                    if(currentClouPosIndex == 4){
+                                        clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
+                                    }
+                                    else{
+                                        clouSelectionContainer.animate({ scrollTop: 0}, 1000);
+                                    }
                                     clouSelectionContainer.addClass('show');
                                     
                                 });
