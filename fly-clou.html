@@ -398,8 +398,8 @@
                                 var child = $(currentElement).find('.step_text')[0];
                                 var leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
                                 var topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
-                                if($(currentElement).find('.step_text-left').length > 0){
-                                    leftPos = leftPos + 200;
+                                if($(currentElement).find('.step_text-left').length > 0 || $(currentElement).find('.step_numberwrap-left').length > 0){
+                                    leftPos = leftPos + 250;
                                 }
                                 clouSelectionContainer.removeClass('show');
                                 // options.each( (optionIndex) => {
