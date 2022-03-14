@@ -389,6 +389,7 @@
                             position = currentElement.getBoundingClientRect();
                         }
                         lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+                        console.log(currentElement)
                         if(currentElement !== undefined){
                             if(position.top >= 0 && position.top <= window.innerHeight) {
                                 var child = $(currentElement).find('.step_text')[0];
