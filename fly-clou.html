@@ -402,17 +402,18 @@
                                     leftPos = leftPos + 250;
                                 }
                                 clouSelectionContainer.removeClass('show');
-                                options.each( (optionIndex) => {
-                                     if(optionIndex == currentClouPosIndex * 2 + 1 && optionIndex == currentClouPosIndex * 2)
-                                        $(options[optionIndex]).show();
-                                    else
-                                        $(options[optionIndex]).css('display','none')
-                                })
+                                
                                 if(scrollDirection == 1)
                                     currentClouPosIndex = currentClouPosIndex + 1;
                                 else
                                     currentClouPosIndex = currentClouPosIndex - 1;
                                 clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
+                                    options.each( (optionIndex) => {
+                                        if(optionIndex == currentClouPosIndex * 2 + 1 && optionIndex == currentClouPosIndex * 2)
+                                            $(options[optionIndex]).show();
+                                        else
+                                            $(options[optionIndex]).css('display','none')
+                                    })
                                     clouSelectionContainer.addClass('show');
                                     
                                 });
