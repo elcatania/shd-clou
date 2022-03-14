@@ -399,9 +399,16 @@
                         if(currentElement !== undefined){
                             if(position.top >= 0 && position.top <= window.innerHeight) {
                                 console.log(currentClouPosIndex)
-                                var child = $(currentElement).find('.step_text')[0];
-                                var leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
-                                var topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
+                               if(currentClouPosIndex == 4){
+                                    var child = $(currentElement).find('.step_text')[0];
+                                    var leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
+                                    var topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
+                                }
+                                else{
+                                    var child = $(currentElement).find('.inputwrap')[0];
+                                    var leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
+                                    var topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
+                                }
                                 if($(currentElement).find('.step_text-left').length > 0 || $(currentElement).find('.step_numberwrap-left').length > 0){
                                     leftPos = leftPos + 250;
                                 }
