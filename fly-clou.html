@@ -424,7 +424,12 @@
                                     leftPos = leftPos + 250;
                                 }
                                 
-                               
+                                if(currentClouPosIndex == 4){
+                                    clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
+                                }
+                                else{
+                                    clouSelectionContainer.animate({ scrollTop: 0}, 1000);
+                                }
                                 clouSelectionContainer.removeClass('show');
                                 
                                 if(scrollDirection == 1)
@@ -438,12 +443,7 @@
                                         else
                                             $(options[optionIndex]).css('display','none')
                                     })
-                                    if(currentClouPosIndex == 4){
-                                        clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
-                                    }
-                                    else{
-                                        clouSelectionContainer.animate({ scrollTop: 0}, 1000);
-                                    }
+                                    
                                     clouSelectionContainer.addClass('show');
                                     
                                 });
