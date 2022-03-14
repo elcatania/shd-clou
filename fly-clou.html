@@ -280,6 +280,8 @@
                         <span id="6" class="chat-option">Option 6</span>
                         <span id="7" class="chat-option">Option 7</span>
                         <span id="8" class="chat-option">Option 8</span>
+                        <span id="9" class="chat-option">Option 9</span>
+                        <span id="10" class="chat-option">Option 10</span>
                     </div>
                     <div id="chat-thread" class="imessage hidden">
                     </div>
@@ -318,6 +320,14 @@
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar lobortis massa, id cursus nisi ullamcorper sed. Morbi eget nisl volutpat, hendrerit tortor sollicitudin, rhoncus metus. Nulla interdum neque eget pharetra placerat. Duis ac vestibulum tortor, a feugiat massa. Suspendisse et dictum dui, vel tempus ante. ',
                 },
                 8: {
+                    title: 'Option 8 Title',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar lobortis massa, id cursus nisi ullamcorper sed. Morbi eget nisl volutpat, hendrerit tortor sollicitudin, rhoncus metus. Nulla interdum neque eget pharetra placerat. Duis ac vestibulum tortor, a feugiat massa. Suspendisse et dictum dui, vel tempus ante. ',
+                },
+                9: {
+                    title: 'Option 7 Title',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar lobortis massa, id cursus nisi ullamcorper sed. Morbi eget nisl volutpat, hendrerit tortor sollicitudin, rhoncus metus. Nulla interdum neque eget pharetra placerat. Duis ac vestibulum tortor, a feugiat massa. Suspendisse et dictum dui, vel tempus ante. ',
+                },
+                10: {
                     title: 'Option 8 Title',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar lobortis massa, id cursus nisi ullamcorper sed. Morbi eget nisl volutpat, hendrerit tortor sollicitudin, rhoncus metus. Nulla interdum neque eget pharetra placerat. Duis ac vestibulum tortor, a feugiat massa. Suspendisse et dictum dui, vel tempus ante. ',
                 }
@@ -398,16 +408,15 @@
                         lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
                         if(currentElement !== undefined){
                             if(position.top >= 0 && position.top <= window.innerHeight) {
-                                console.log(currentClouPosIndex)
                                 var child,leftPos,topPos;
                                 
                                 if(currentClouPosIndex == 4){
-                                    child = $(currentElement).find('.step_text')[0];
+                                    child = $(currentElement).find('.inputwrap')[0];
                                     leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
                                     topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
                                 }
                                 else{
-                                    child = $(currentElement).find('.inputwrap')[0];
+                                    child = $(currentElement).find('.step_text')[0];
                                     leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
                                     topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
                                 }
