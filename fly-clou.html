@@ -391,7 +391,7 @@
                         lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
                         if(currentElement !== undefined){
                             if(position.top >= 0 && position.top <= window.innerHeight) {
-                                var child = $(currentElement).find('.steptext')[0];
+                                var child = $(currentElement).find('.step_text')[0];
                                 var leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
                                 var topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
                                 
