@@ -372,12 +372,10 @@
                     var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
                     var currentElement;
                     console.log(steps)
-                    if (st > lastScrollTop){
+                   if (st > lastScrollTop){
                         // downscroll code
                         currentElement = steps[currentClouPosIndex + 1];
                         var position = currentElement.getBoundingClientRect();
-                        console.log(position)
-                        
                     } else {
                         // upscroll code
                         if(currentClouPosIndex === 0){
@@ -387,9 +385,9 @@
                             currentElement = steps[currentClouPosIndex - 1];
                         }
                         var position = currentElement.getBoundingClientRect();
-                        console.log(position)
                     }
                     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+                    console.log(currentElement,position.top,position.bottom)
                     console.log(position.top >= 0 && position.top <= window.innerHeight)
                     if(position.top >= 0 && position.top <= window.innerHeight) {
                         currentClouPosIndex = currentClouPosIndex + 1;
