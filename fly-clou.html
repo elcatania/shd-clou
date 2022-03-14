@@ -332,7 +332,7 @@
                 var currentClouPosIndex = 0;
 
                 clouContainer.css('display','none')
-                clouContainer.animate({ top:  (steps[0].getBoundingClientRect().top + -90 + $(window)['scrollTop']()) + 'px', left: (steps[0].getBoundingClientRect().left + 30 + $(window)['scrollLeft']()) + 'px'}, 1000,() => {
+                clouContainer.animate({ top:  (steps[0].getBoundingClientRect().top + -90 + $(window)['scrollTop']()) + 'px', left: (steps[0].getBoundingClientRect().left + 230 + $(window)['scrollLeft']()) + 'px'}, 1000,() => {
                     clouContainer.show();
                     clouSelectionContainer.addClass('show');
                 });
@@ -409,7 +409,7 @@
                                     currentClouPosIndex = currentClouPosIndex - 1;
                                 clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
                                     options.each( (optionIndex) => {
-                                        if(optionIndex == currentClouPosIndex * 2 + 1 && optionIndex == currentClouPosIndex * 2)
+                                        if(optionIndex == currentClouPosIndex * 2 + 1 || optionIndex == currentClouPosIndex * 2)
                                             $(options[optionIndex]).show();
                                         else
                                             $(options[optionIndex]).css('display','none')
