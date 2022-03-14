@@ -329,7 +329,7 @@
                 var closeBtn = $('#close-btn');
                 var clouContainer = $('#clou-container');
                 var steps = $('#step1, #step2, #step3, #step4, #step5');
-                var currentClouPosIndex;
+                var currentClouPosIndex = 0;
 
                 clouContainer.css('display','none')
                 clouContainer.animate({ top:  (steps[0].getBoundingClientRect().top + -90 + $(window)['scrollTop']()) + 'px', left: (steps[0].getBoundingClientRect().left + 30 + $(window)['scrollLeft']()) + 'px'}, 1000,() => {
