@@ -411,7 +411,7 @@
                                 var child,leftPos,topPos;
                                 
                                 if(currentClouPosIndex == 4){
-                                    child = $(currentElement).find('.inputwrap')[0];
+                                    child = $(currentElement).find('.col-m-none')[0];
                                     leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
                                     topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
                                 }
@@ -423,7 +423,13 @@
                                 if($(currentElement).find('.step_text-left').length > 0 || $(currentElement).find('.step_numberwrap-left').length > 0){
                                     leftPos = leftPos + 250;
                                 }
-                                clouSelectionContainer.animate({ scrollTop: 0}, 1000);
+                                if(currentClouPosIndex == 4){
+                                   clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
+                                }
+                                else{
+                                   clouSelectionContainer.animate({ scrollTop: 0}, 1000);
+                                }
+                               
                                 clouSelectionContainer.removeClass('show');
                                 
                                 if(scrollDirection == 1)
