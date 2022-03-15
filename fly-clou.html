@@ -339,7 +339,7 @@
                       var scrollDirection;
                       if (st > lastScrollTop){
                           // downscroll code
-                          if(currentClouPosIndex < 5) {
+                          if(currentClouPosIndex < 9) {
                               currentElement = steps[currentClouPosIndex + 1];
                               position = currentElement.getBoundingClientRect();
                           }
@@ -379,7 +379,7 @@
                                 currentClouPosIndex = currentClouPosIndex - 1;
                               clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
                                   
-                                  
+                                  selectOption()
                                   clouSelectionContainer.addClass('show');
                                   
                               });
@@ -387,7 +387,7 @@
                       }
                   }, 150)
               },false);            
-              function selectOption(id) {
+              function selectOption() {
                 //   var message = $('<p></p>').addClass('from-me').text(optionResult.title);
                   clouChatThread.removeClass('hidden');
 
