@@ -1,5 +1,5 @@
 <script>
-    var questions = [
+   var questions = [
     {
         id: 1,
         question: 'Wie groß ist Dein Unternehmen?',
@@ -108,7 +108,6 @@
         id: 5,
         question: 'Was ist Dein primäres Ziel?',
         level: 1,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
         options: [
             {
                 id: 1,
@@ -156,7 +155,6 @@
         id: 7,
         question: 'Hast Du eine eigene IT Abteilung?',
         level: 1,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
         options: [
             {
                 id: 1,
@@ -196,7 +194,6 @@
         id: 9,
         question: 'Bis wann möchtest Du das Projekt umsetzen?',
         level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
         options: [
             {
                 id: 1,
@@ -222,7 +219,6 @@
         id: 10,
         question: 'Wieviele Benutzer arbeiten auf dem aktuellen System?',
         level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
         options: [
             {
                 id: 1,
@@ -248,7 +244,6 @@
         id: 11,
         question: 'Welche Programme nutzt Du aktuell ?',
         level: 2,
-        msgClou: "Welche Programme nutzt Du aktuell?",
         options: [
             {
                 id: 1,
@@ -270,7 +265,6 @@
         id: 12,
         question: 'Wieviele virtuelle Instanzen betreibst Du aktuell?',
         level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
         options: [
             {
                 id: 1,
@@ -292,7 +286,6 @@
         id: 13,
         question: 'Welche Betriebssysteme sind im Einsatz?',
         level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
         options: [
             {
                 id: 1,
@@ -323,7 +316,6 @@
         id: 14,
         question: 'Welchen Ressourcenumpfang hat die IT-Infrastruktur (CPU/RAM/Storage)',
         level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
         options: [
             {
                 id: 1,
@@ -345,7 +337,6 @@
         id: 15,
         question: 'Benötigst Du alle angebenen Instanzen in der Cloud?',
         level: 2,
-        //msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
         options: [
             {
                 id: 1,
@@ -363,7 +354,6 @@
         id: 16,
         question: 'Wieviele Remote-User hast Du?',
         level: 2,
-        // msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
         options: [
             {
                 id: 1,
@@ -385,7 +375,6 @@
         id: 17,
         question: 'Wie oft wünschst Du Dir eine Datensicherung?',
         level: 2,
-        // msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
         options: [
             {
                 id: 1,
@@ -409,194 +398,6 @@
             }
         ],
         role: []
-
-    },
-    {
-        id: 18,
-        question: 'Sind die akutellen Systeme auf Redudanz ausgelegt?',
-        level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
-        options: [
-            {
-                id: 1,
-                text: "Ja"
-            },
-            {
-                id: 2,
-                text: "Nein"
-            }
-        ],
-        role: [2, 3]
-
-    },
-    {
-        id: 19,
-        question: 'Wie alt ist die aktuelle Netzwerktechnik?',
-        level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
-        options: [
-            {
-                id: 1,
-                text: "< 1 Jahr"
-            },
-            {
-                id: 2,
-                text: "> 3 Jahre"
-            },
-            {
-                id: 3,
-                text: "> 10 Jahre"
-            }
-        ],
-        role: [2, 3]
-
-    },
-    {
-        id: 1,
-        question: 'Hast Du bereits im Netzwerk eine VLAN Struktur?',
-        level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
-        options: [
-            {
-                id: 1,
-                text: "Ja"
-            },
-            {
-                id: 2,
-                text: "Nein"
-            }
-        ],
-        role: [2, 3]
-
-    },
-    {
-        id: 21,
-        question: 'Unterstützt Dein Router VPN mit IPSEC IKEv2?',
-        level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
-        options: [
-            {
-                id: 1,
-                text: "Ja"
-            },
-            {
-                id: 2,
-                text: "Nein"
-            }
-        ],
-        role: [2, 3]
-
-    },
-    {
-        id: 22,
-        question: 'Hat Dein Internetanschluss ein feste IP-Adresse?',
-        level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
-        options: [
-            {
-                id: 1,
-                text: "Ja"
-            },
-            {
-                id: 2,
-                text: "Nein"
-            }
-        ],
-        role: [2, 3]
-
-    },
-    {
-        id: 23,
-        question: 'Hast Du eigene IT Mitarbeiter?',
-        level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
-        options: [
-            {
-                id: 1,
-                text: "Ja"
-            },
-            {
-                id: 2,
-                text: "Nein"
-            }
-        ],
-        role: []
-
-    },
-    {
-        id: 24,
-        question: 'Gibt es in Deinem Unternehmen einen IT Verantwortlichen bzw. Entscheider?',
-        level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
-        options: [
-            {
-                id: 1,
-                text: "Ja"
-            },
-            {
-                id: 2,
-                text: "Nein"
-            }
-        ],
-        role: []
-
-    },
-    {
-        id: 25,
-        question: 'Ist es Dir wichtig, Dein CO2-Footprint zu verringern?',
-        level: 2,
-        msgClou: "Ist es Dir wichtig, Dein CO2-Footprint zu verringern?",
-        options: [
-            {
-                id: 1,
-                text: "Ja"
-            },
-            {
-                id: 2,
-                text: "Nein"
-            }
-        ],
-        role: [1, 4]
-
-    },
-    {
-        id: 26,
-        question: 'Brauchst Du Grafikleistung in der Cloud?',
-        level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
-        options: [
-            {
-                id: 1,
-                text: "Ja"
-            },
-            {
-                id: 2,
-                text: "Nein"
-            }
-        ],
-        role: [2]
-
-    },
-    {
-        id: 27,
-        question: 'Welche Vertragslaufzeit wäre für Dich ideal?',
-        level: 2,
-        msgClou: "Mithilfe der Anzahl Ihrer Arbeitsplätze, können wir eine Empfehlung bzgl. Ihrer Cloud-Variante aussprechen.",
-        options: [
-            {
-                id: 1,
-                text: "36 Monate"
-            },
-            {
-                id: 2,
-                text: "48 Monate"
-            },
-            {
-                id: 3,
-                text: "60 Monate"
-            }
-        ],
-        role: [1, 2, 4]
 
     }
 
@@ -704,16 +505,4 @@ $('.radio-button-field').on('click', function () {
         curretnStepLvlTwo = curretnStepLvlTwo + 1;
     }
 });
-
-
-
-
-
-//Step 1: Welcome message
-
-//Step 2: Was trifft auf Dich zu?
-
-//Step 3: Show Options
-
-//Step 4: Show follow up questions and correspoding Options
 </script>
