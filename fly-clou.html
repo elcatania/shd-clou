@@ -422,16 +422,16 @@
                             if(position.top >= 0 && position.top <= window.innerHeight) {
                                 var child,leftPos,topPos;
                                 
-                                if(currentClouPosIndex == 4){
-                                    child = $(currentElement).find('.col-m-none')[0];
-                                    leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
-                                    topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
-                                }
-                                else{
+                                //if(currentClouPosIndex == 4){
+                                //    child = $(currentElement).find('.col-m-none')[0];
+                                //    leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
+                                //    topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
+                                //}
+                                //else{
                                     child = $(currentElement).find('.step_text')[0];
                                     leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
                                     topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
-                                }
+                                //}
                                 if($(currentElement).find('.step_text-left').length > 0 || $(currentElement).find('.step_numberwrap-left').length > 0){
                                     leftPos = leftPos + 250;
                                 }
