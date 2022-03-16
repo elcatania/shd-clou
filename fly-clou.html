@@ -313,6 +313,13 @@
               closeBtn.click(() => {
                   clouSelectionContainer.removeClass('show');
               })
+            
+             clouContainer.css('display','none')
+            clouContainer.animate({ top:  ($('#step1')[0].getBoundingClientRect().top + -90 + $(window)['scrollTop']()) + 'px', left: ($('#step1')[0].getBoundingClientRect().left + 230 + $(window)['scrollLeft']()) + 'px'}, 1000,() => {
+              console.log("ANIAMTED")
+              clouContainer.show();
+              clouSelectionContainer.addClass('show');
+            });
 
               
 //               var lastScrollTop = 0;
