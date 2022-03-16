@@ -407,11 +407,17 @@
                           typing.remove();
                           setTimeout(() => {
                               var answer = $('<p></p>').addClass('from-them').text("Hey, ich in Clou - ich bin neu hier. Heute ist mein erster Tag und ich möchte euch und eure Bedürfnisse besser kennenlernen.");
-                              var answer2 = $('<p></p>').addClass('from-them').text("Bitte verrate mir, wie groß dein Unternehmen ist, damit wir gemeinsam eine Lösung finden können, die am besten zu deinem Unternehmen passt.");
+                             
                               clouChatThread.append(answer)  
+                              clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
+                          },0)   
+                         setTimeout(() => {
+                              var answer2 = $('<p></p>').addClass('from-them').text("Bitte verrate mir, wie groß dein Unternehmen ist, damit wir gemeinsam eine Lösung finden können, die am besten zu deinem Unternehmen passt.");
+                             
                               clouChatThread.append(answer2)  
                               clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
                           },0)   
+                         
                       },2000)
                   },500)
               }
