@@ -289,12 +289,6 @@
               var steps = $('#step1, #step2, #step3, #step4, #step5, #step6, #step7, #step8, #step9');
               var currentClouPosIndex = 0;
               var init = true;
-
-              clouContainer.css('display','none')
-              clouContainer.animate({ top:  (steps[0].getBoundingClientRect().top + -90 + $(window)['scrollTop']()) + 'px', left: (steps[0].getBoundingClientRect().left + 230 + $(window)['scrollLeft']()) + 'px'}, 1000,() => {
-                  clouContainer.show();
-                  clouSelectionContainer.addClass('show');
-              });
               
               
               var clou = document.getElementById('eUOeSKg7HB11');
@@ -319,74 +313,74 @@
               })
 
               
-              var lastScrollTop = 0;
-              var timer = null;
-              window.addEventListener('scroll', function() {
-                     if(init){
-                        init = false;
-                        return;
-                     }
+//               var lastScrollTop = 0;
+//               var timer = null;
+//               window.addEventListener('scroll', function() {
+//                      if(init){
+//                         init = false;
+//                         return;
+//                      }
                      
-                     if(timer !== null) {
-                          clearTimeout(timer);        
-                      }
-                      timer = setTimeout(function() {
-                            // do something
+//                      if(timer !== null) {
+//                           clearTimeout(timer);        
+//                       }
+//                       timer = setTimeout(function() {
+//                             // do something
                       
-                      var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-                      var currentElement;
-                      var position;
-                      var scrollDirection;
-                      if (st > lastScrollTop){
-                          // downscroll code
-                          if(currentClouPosIndex < 9) {
-                              currentElement = steps[currentClouPosIndex + 1];
-                              position = currentElement.getBoundingClientRect();
-                          }
-                          scrollDirection = 1;
-                      } else {
-                          // upscroll code
-                          if(currentClouPosIndex === 0){
-                              currentElement = steps[currentClouPosIndex];
-                          }
-                          else if(currentClouPosIndex > 0){
-                              currentElement = steps[currentClouPosIndex - 1];
-                          }
+//                       var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+//                       var currentElement;
+//                       var position;
+//                       var scrollDirection;
+//                       if (st > lastScrollTop){
+//                           // downscroll code
+//                           if(currentClouPosIndex < 9) {
+//                               currentElement = steps[currentClouPosIndex + 1];
+//                               position = currentElement.getBoundingClientRect();
+//                           }
+//                           scrollDirection = 1;
+//                       } else {
+//                           // upscroll code
+//                           if(currentClouPosIndex === 0){
+//                               currentElement = steps[currentClouPosIndex];
+//                           }
+//                           else if(currentClouPosIndex > 0){
+//                               currentElement = steps[currentClouPosIndex - 1];
+//                           }
 
-                          position = currentElement.getBoundingClientRect();
-                          scrollDirection = 0;
-                      }
-                      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-                      if(currentElement !== undefined){
-                          if(position.top >= 0 && position.top <= window.innerHeight) {
-                              var child,leftPos,topPos;
+//                           position = currentElement.getBoundingClientRect();
+//                           scrollDirection = 0;
+//                       }
+//                       lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+//                       if(currentElement !== undefined){
+//                           if(position.top >= 0 && position.top <= window.innerHeight) {
+//                               var child,leftPos,topPos;
                              
-                                child = $(currentElement).find('.step_text')[0];
-                                leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
-                                topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
+//                                 child = $(currentElement).find('.step_text')[0];
+//                                 leftPos = child.getBoundingClientRect().left + 30 + $(window)['scrollLeft']();
+//                                 topPos  = child.getBoundingClientRect().top - 90 + $(window)['scrollTop']();
                               
-                              if($(currentElement).find('.step_text-left').length > 0 || $(currentElement).find('.step_numberwrap-left').length > 0){
-                                  leftPos = leftPos + 250;
-                              }
+//                               if($(currentElement).find('.step_text-left').length > 0 || $(currentElement).find('.step_numberwrap-left').length > 0){
+//                                   leftPos = leftPos + 250;
+//                               }
                               
-                            clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
+//                             clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
                               
-                              clouSelectionContainer.removeClass('show');
+//                               clouSelectionContainer.removeClass('show');
                               
-                             if(scrollDirection == 1)
-                                currentClouPosIndex = currentClouPosIndex + 1;
-                             else
-                                currentClouPosIndex = currentClouPosIndex - 1;
-                              clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
+//                              if(scrollDirection == 1)
+//                                 currentClouPosIndex = currentClouPosIndex + 1;
+//                              else
+//                                 currentClouPosIndex = currentClouPosIndex - 1;
+//                               clouContainer.animate({ top:  topPos + 'px', left: leftPos + 'px'}, 1000,() => {
                                   
-                                  //selectOption()
-                                  clouSelectionContainer.addClass('show');
+//                                   //selectOption()
+//                                   clouSelectionContainer.addClass('show');
                                   
-                              });
-                          }
-                      }
-                  }, 150)
-              },false);            
+//                               });
+//                           }
+//                       }
+//                   }, 150)
+//               },false);            
               function selectOption() {
                 //   var message = $('<p></p>').addClass('from-me').text(optionResult.title);
                   clouChatThread.removeClass('hidden');
