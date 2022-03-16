@@ -415,7 +415,7 @@
                          
                       },1000)
                   },500)
-                setTimeout(() => {
+                  setTimeout(() => {
                       clouChatThread.append(typing)  
                       setTimeout(() => {
                           typing.remove();
@@ -425,9 +425,8 @@
                               clouChatThread.append(answer)  
                               clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
                           },0)   
-                        
-                         
-                      },1000)
+
+                      },2000)
                   },1000)
               }
           })
