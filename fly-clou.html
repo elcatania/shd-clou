@@ -411,15 +411,24 @@
                               clouChatThread.append(answer)  
                               clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
                           },0)   
-                         setTimeout(() => {
-                              var answer2 = $('<p></p>').addClass('from-them').text("Bitte verrate mir, wie groß dein Unternehmen ist, damit wir gemeinsam eine Lösung finden können, die am besten zu deinem Unternehmen passt.");
-                             
-                              clouChatThread.append(answer2)  
-                              clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
-                          },300)   
+                        
                          
-                      },2000)
+                      },1000)
                   },500)
+                setTimeout(() => {
+                      clouChatThread.append(typing)  
+                      setTimeout(() => {
+                          typing.remove();
+                          setTimeout(() => {
+                              var answer = $('<p></p>').addClass('from-them').text("Bitte verrate mir, wie groß Dein Unternehmen ist, damit wir gemeinsam eine Lösung finden können, die am besten zu Deinen Anforderungen passt.");
+                             
+                              clouChatThread.append(answer)  
+                              clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
+                          },0)   
+                        
+                         
+                      },1000)
+                  },1000)
               }
           })
         </script>
