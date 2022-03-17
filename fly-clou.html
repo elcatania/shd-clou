@@ -290,19 +290,17 @@ $(document).ready(() => {
     })
   
     clouContainer.css('display','none')
-    if(window.screen.width < 991){
-        clouContainer.animate({ bottom: '0px', right: '0px'}, 1000,() => {
-            clouContainer.show();
-            clouSelectionContainer.addClass('show');
-            selectOption()
-        });
-    }
-    else {
+    if(window.screen.width > 991){
         clouContainer.animate({ top:  ($('#step1')[0].getBoundingClientRect().top + -90 + $(window)['scrollTop']()) + 'px', left: ($('#step1')[0].getBoundingClientRect().left + 230 + $(window)['scrollLeft']()) + 'px'}, 1000,() => {
             clouContainer.show();
             clouSelectionContainer.addClass('show');
             selectOption()
         });    
+    }
+    else {
+      clouContainer.show();
+      clouSelectionContainer.addClass('show');
+      selectOption()
     }
        
     function selectOption() {
