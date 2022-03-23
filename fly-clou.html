@@ -346,7 +346,7 @@ $(document).ready(() => {
             setTimeout(() => {
                 typing.remove();
                 setTimeout(() => {
-                    var answer = $('<p></p>').addClass('from-them').text("Wie viele Mitarbeiter hast Du? Wenn ich das weiß, können wir gemeinsam schauen, was am besten zu Euch passt.");
+                    var answer = $('<p></p>').addClass('from-them').append("Bevor es nun losgeht, hast du hier noch die Möglichkeit dich zu unserem Newsletter anzumelden und immer auf dem neuesten Stand zu bleiben. Folge einfach diesem <a href='https://www.shd.de/shd/newsletter/'>Link</a>");
                    
                     clouChatThread.append(answer)  
                     clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
@@ -354,6 +354,19 @@ $(document).ready(() => {
 
             },2000)
         },3000)
+        setTimeout(() => {
+            clouChatThread.append(typing)  
+            setTimeout(() => {
+                typing.remove();
+                setTimeout(() => {
+                    var answer = $('<p></p>').addClass('from-them').text("Wie viele Mitarbeiter hast Du? Wenn ich das weiß, können wir gemeinsam schauen, was am besten zu Euch passt.");
+                   
+                    clouChatThread.append(answer)  
+                    clouSelectionContainer.animate({ scrollTop: clouSelectionContainer.prop("scrollHeight")}, 1000);
+                },0)   
+
+            },3000)
+        },5000)
     }
 })
 </script>
