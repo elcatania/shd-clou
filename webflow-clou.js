@@ -64,11 +64,11 @@ $(document).ready(() => {
 
         if (persona == 'it-mitarbeiter' || persona == 'it-leiter') {
             if (nextStep == 8)
-                selectOption('Vielen Dank, dass Du meine bisherigen Fragen schon beantwortet hast, ich konnte mir so schon ein gutes Bild machen. Um Dich noch ein bisschen besser kennenzulernen, beantworte mir doch bitte noch drei weitere Fragen.')
+                selectOption('Vielen Dank, dass Du meine bisherigen Fragen schon beantwortet hast, ich konnte mir so schon ein gutes Bild machen. Um Dich noch ein bisschen besser kennenzulernen, beantworte mir doch bitte noch ein paar weitere Fragen.')
         }
         else {
             if (nextStep == 8)
-                selectOption('Vielen Dank, dass Du meine bisherigen Fragen schon beantwortet hast, ich konnte mir schon dadurch ein gutes Bild Deiner derzeitigen Situation machen. Beantwortest Du mir noch eine Frage?')
+                selectOption('Vielen Dank, dass Du meine bisherigen Fragen schon beantwortet hast, ich konnte mir schon dadurch ein gutes Bild Deiner derzeitigen Situation machen. Beantwortest Du mir noch ein paar Frage?')
         }
 
         if (currentStep == 3) {
@@ -113,7 +113,7 @@ $(document).ready(() => {
         }
     });
 
-    $('#btn-next, #btn-next2').on('click', function () {
+    $('#btn-next, #btn-next2, #btn-next3').on('click', function () {
         currentStep = currentStep + 1;
         if (currentStep + 1 > maxStep) {
             showSection(40);
@@ -208,7 +208,7 @@ $(document).ready(() => {
             }
         }
         else {
-            $('#step' + id).find('.step_number').text(currentStep > 9 ? (currentStep + 1) : '0' + (currentStep + 1))
+            $('#step' + id).find('.step_number').text((currentStep + 1) > 9 ? (currentStep + 1) : '0' + (currentStep + 1))
             if (window.screen.width > 991) {
                 $('#clou-container').animate({ top: ($('#step' + id).find('.step_text')[0].getBoundingClientRect().top + -90 + $(window)['scrollTop']()) + 'px', left: ($('#step' + id).find('.step_text')[0].getBoundingClientRect().left + 230 + $(window)['scrollLeft']()) + 'px' }, 1000, () => {
                     $('#clou-container').show();
