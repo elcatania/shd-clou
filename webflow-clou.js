@@ -209,6 +209,9 @@ $(document).ready(() => {
         }
         else {
             $('#step' + id).find('.step_number').text((currentStep + 1) > 9 ? (currentStep + 1) : '0' + (currentStep + 1))
+            if(id > 1)
+                $('#step' + (id - 1)).find('.number').css('display', 'none')
+            $('#step' + id).find('.number').text((currentStep + 1))
             if (window.screen.width > 991) {
                 $('#clou-container').animate({ top: ($('#step' + id).find('.step_text')[0].getBoundingClientRect().top + -90 + $(window)['scrollTop']()) + 'px', left: ($('#step' + id).find('.step_text')[0].getBoundingClientRect().left + 230 + $(window)['scrollLeft']()) + 'px' }, 1000, () => {
                     $('#clou-container').show();
