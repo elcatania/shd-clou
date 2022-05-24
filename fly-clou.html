@@ -26,7 +26,7 @@
   
     .clou-container {
         position: absolute;
-        display: flex;
+        display: none;
         justify-content: flex-end;
         align-items: flex-end;
         margin-top:100px
@@ -288,6 +288,7 @@ $(document).ready(() => {
     var clouChatThread = $('#chat-thread');
     var closeBtn = $('#close-btn');
     var clouContainer = $('#clou-container');
+    clouContainer.css('display', 'flex')
     var clou = document.getElementById('eC7p9e0NmYr1');
 
     clou.svgatorPlayer.ready(function () {
